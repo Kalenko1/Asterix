@@ -1,0 +1,356 @@
+body {
+    background-color: black;
+    color: #CCAF25;
+    font-family: 'Sedgwick Ave Display', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.description {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    max-width: 100%;
+    margin: 0;
+}
+.image-container {
+          background-repeat: repeat;
+          background-position: center center;
+          background-size: cover;
+          height: 500px;
+          display: flex;
+         
+          justify-content: center;
+          align-items: center;
+       }
+
+.image-container img {
+    width: 80%;
+    height: auto;
+    display: block;
+}
+.nav {
+    margin-top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px;
+}
+.backgorund {
+    background-color: #CCAF25;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 5px;
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.nav a {
+    color: #CCAF25;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 5px;
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid #CCAF25;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.nav a:hover {
+    background-color: #CCAF25;
+    color: black;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+}
+
+footer a {
+    color: #CCAF25;
+    font-size: 50px;
+    text-decoration: none;
+}
+/* Stilovi samo za repertoar stranicu */
+.repertoar-page .repertoar-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolone */
+    grid-template-rows: repeat(2, auto);  /* 2 reda */
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Stil za svaku sekciju */
+.repertoar-page .box {
+    background-color: #CCAF25;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid black;
+}
+
+/* Read More dugme */
+.repertoar-page .read-more {
+    background-color: black;
+    color: #CCAF25;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    
+}
+
+.repertoar-page .read-more:hover {
+    background-color: black;
+}
+.full-text {
+    display: none;
+}
+
+/* Dugme za prikazivanje teksta */
+.read-more {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.read-more:hover {
+    background-color: #0056b3;
+}
+-----------------
+/* GALERIJA */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery_item img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery_item img:hover {
+    transform: scale(1.1);
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-image {
+    max-width: 80%;
+    max-height: 80vh;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Omogućava prelamanje u novi red */
+    justify-content: center;
+    gap: 15px; /* Razmak između slika */
+    padding: 20px;
+    max-width: 1000px; /* Ograničava širinu galerije */
+    margin: auto; /* Centriranje galerije */
+}
+
+.gallery_item {
+    width: calc(33.33% - 15px); /* Postavlja 3 slike po redu (možeš menjati) */
+    max-width: 250px; /* Ograničenje maksimalne veličine */
+}
+
+.gallery_item img {
+    width: 100%;
+    height: 180px; /* Smanjena visina */
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s, border 0.3s; /* Dodali smo i border u transition */
+    border: 5px solid #CCAF25; /* Zlatan okvir */
+    border-radius: 10px; /* Zaokruži ivice okvira */
+}
+
+/* Efekat kada korisnik pređe mišem preko slike */
+.gallery_item img:hover {
+    transform: scale(1.1); /* Povećanje slike */
+    border: 5px solid #CCAF25; /* Zlatna boja pri hover-u (svetlija verzija zlatne) */
+}
+
+.kontakt {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    align-items: center;
+    gap: 10px; /* Razmak između ikonica */
+    margin-top: 20px;
+}
+
+.ikonica {
+    font-size: 24px; /* Povećava ikonice */
+    color: gold; /* Zlatna boja */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Razmak između ikonice i teksta */
+}
+
+.ikonica i {
+    font-size: 30px; /* Povećava samu ikonicu */
+}
+
+.ikonica:hover {
+    color: darkgoldenrod; /* Tamnija zlatna nijansa na hover */
+}
+
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.video-container iframe {
+    width: 100%;
+    max-width: 560px; /* Maksimalna širina na velikom ekranu */
+    aspect-ratio: 16 / 9; /* Omogućava automatsko skaliranje visine */
+    border-radius: 10px; /* Zaobljeni uglovi */
+}
+
+
+/* Poboljšanje za mobilne uređaje */
+@media (max-width: 600px) {
+    .ikonica {
+        font-size: 20px;
+    }
+    
+    .ikonica i {
+        font-size: 26px;
+    }
+}
+
+/* RESPONSIVE - Podešavanje za manje ekrane */
+
+
+@media (max-width: 768px) {
+    .gallery_item {
+        width: calc(50% - 15px); /* 2 slike po redu na manjim ekranima */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery_item {
+        width: 100%; /* 1 slika po redu na mobilnim uređajima */
+    }
+}
+
+
+/* Responsivan dizajn za male ekrane */
+@media (max-width: 768px) {
+    .repertoar-page .repertoar-container {
+        grid-template-columns: 1fr; /* 1 kolona na malim ekranima */
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+    .nav a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+@media (max-width: 768px) {
+    .nav {
+        padding: 10px;
+    }
+    .nav a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
+@media (max-width: 480px) {
+    .nav a {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+    @media (max-width: 480px) {
+        .description {
+            font-size: 12px;
+            padding: 5px 8px;
+        }
+    }
+    @media (max-width: 1024px) {
+        .footer a {
+            font-size: 12px;
+            padding: 5px 8px;
+        }
+}
+
+}
